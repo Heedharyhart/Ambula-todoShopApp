@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 const ShoppingAppContext = createContext();
@@ -28,7 +29,7 @@ export const ShoppingAppProvider = ({ children }) => {
       setProducts(getProducts);
       setLoading(false);
     } catch (error) {
-      setError("Error fetching data.");
+      setError("Error fetching data.: ", error);
       setLoading(false);
     }
   };
